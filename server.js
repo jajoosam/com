@@ -38,8 +38,9 @@ var path = require('path'),
 //           }})
 var queries = db.get('queries')
 console.log(queries)
-app.use(express.static('public'));
 app.all('*', checkHttps)
+app.use(express.static('public'));
+
 
 function add(text, id) {
     var faves;
