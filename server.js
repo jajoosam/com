@@ -2,6 +2,18 @@
 const JSONdb = require('simple-json-db');
 const db = new JSONdb('db.json');
 
+function checkHttps(req, res, next){
+  // protocol check, if http, redirect to https
+  
+  if(req.get('X-Forwarded-Proto').indexOf("https")!=-1){
+    console.log("https, yo")
+    return next()
+  } else {
+    console.log("just http")
+    res.redirect('https://' + req.hostname + req.url);
+  }
+}
+
 var path = require('path'),
     express = require('express'),
     app = express(),
@@ -27,6 +39,7 @@ var path = require('path'),
 var queries = db.get('queries')
 console.log(queries)
 app.use(express.static('public'));
+app.all('*', checkHttps)
 
 function add(text, id) {
     var faves;
