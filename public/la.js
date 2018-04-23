@@ -76,7 +76,7 @@ jQuery("#form").submit(function(e) {
      e.preventDefault();
     if(checkName()){
     console.log("addmyfilter (" + temp + ")");
-    window.location.href = "https://twitter.com/share?text=addmyfilter (" + temp.trim() + ")";
+    window.location.href = "https://twitter.com/intent/tweet?via=%23com__com___&text=addmyfilter (" + temp.trim() + ")";
   }
 }
 );
