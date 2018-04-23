@@ -1,0 +1,39 @@
+
+<html>
+  <head>
+    <title>COMmunity Bot</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="https://cdn.glitch.com/edd7b249-800f-4ec2-8acf-9a2c2a6bd279%2F988f6dace3b077c34a2025ccfd8af60d.png?1524494993379">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+    <link rel="stylesheet" href="//cdn.rawgit.com/necolas/normalize.css/master/normalize.css">
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-exp.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-icons.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <meta name="description" content="Twitter's own retweet bot"/>
+  </head>
+  <body style="color:#F5F5F5;background-color:#3d3d3d; padding:2em">
+   <div>
+      <h3>
+        <mark style="color:#F5F5F5; background-color:rgba(74, 137, 220, 0.3); padding:0.5em; border-radius:0.25em;">Filter Types:</mark>
+      </h3>
+       <br>
+      <p>
+        Most things here are case sensitive, and whitespace sensitive.
+      </p>
+      <ul>
+        <li><a class="twitter-link" href="https://twitter.com/share?text=#addmyfilter (from:ElonMusk)" target="_blank"><strong>from:ElonMusk</strong></a> | This specifies which account the tweet should be from</li>
+        <li><a class="twitter-link" href="https://twitter.com/share?text=#addmyfilter (from:ElonMusk min_retweets:1000)" target="_blank"><strong>min_retweets:<code>number-goes here</code></strong></a> | Append this to a filter, to only see tweets which have at least <em>x</em> retweets</li>
+        <li><a class="twitter-link" href="https://twitter.com/share?text=#addmyfilter (from:ElonMusk min_faves:5000)" target="_blank"><strong>min_faves:<code>number-goes here</code></strong></a> | Append this to a filter, to only see tweets which have at least <em>x</em> favorites</li>
+        <li><a class="twitter-link" href="https://twitter.com/share?text=#addmyfilter (com.glitch.me)" target="_blank"><strong>url.com/yourownurl</strong></a> | See only tweets which mention a particular URL</li>
+        <li><a class="twitter-link" href="https://twitter.com/share?text=#addmyfilter (filter:verified min_faves:3000)" target="_blank"><strong>filter:verified</strong></a> | Append this to any filter to only show the tweets which come from verified accounts</li>
+        <li><a class="twitter-link" href="https://twitter.com/share?text=#addmyfilter (from:POTUS filter:news)" target="_blank"><strong>filter:news</strong></a> | Append this to any filter to only show the tweets which link to a news website</li>
+        <li><a class="twitter-link" href="https://twitter.com/share?text=#addmyfilter (filter:safe min_faves:99)" target="_blank"><strong>filter:safe</strong></a> | Append this to any fiter to excluse sensitive/adult content</li>
+        <li><a class="twitter-link" href="https://twitter.com/share?text=#addmyfilter (from:GIPHY filter:images)" target="_blank"><strong>filter:images</strong></a> | Append this to any filter to see only tweets which contain images</li>
+        <li><a class="twitter-link" href="https://twitter.com/share?text=#addmyfilter (filter:verified min_faves:100 -RT)" target="_blank"><strong>-RT</strong></a> | Append this to any filter to exculde retweets which match the filter</li>
+        <li><a class="twitter-link" href="https://twitter.com/share?text=#addmyfilter (#com)" target="_blank"><strong>#hashtag</strong></a> | Shows tweets with a particular hashtag</li>
+        <li><a class="twitter-link" href="https://twitter.com/share?text=#addmyfilter (near:NYC)" target="_blank"><strong>near:place within:10mi</strong></a> | Filter tweets which come within a particular radius from a place</li>
+      </ul>
+    </div>
+  </body>
+</html>

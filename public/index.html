@@ -1,9 +1,10 @@
+
 <html>
   <head>
     <title>COMmunity Bot
     </title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="https://ashleighy.github.io/emoji.js/img/emoji/1f63a.png">
+    <link rel="shortcut icon" href="https://cdn.glitch.com/edd7b249-800f-4ec2-8acf-9a2c2a6bd279%2F988f6dace3b077c34a2025ccfd8af60d.png?1524494993379">
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
     <link rel="stylesheet" href="//cdn.rawgit.com/necolas/normalize.css/master/normalize.css">
     <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
@@ -28,7 +29,7 @@
     <p style="margin-top:2em;">
       COM is a twitter retweet bot powered by the community. It retweets according to the filters you set up for it.
     </p>
-      <button onclick="$('#container').toggle();" style="margin-left:0; margin-bottom:2em;background-color:#4a89dc; border-color: #4a89dc;color: white; height: 2.5rem; border-radius: 0.25em; padding: 0 1%; max-width:95%" class="sub btn btn-lg">Add a filter ⚡
+      <button onclick="$('#container').slideToggle();" style="margin-left:0; margin-bottom:2em;background-color:#4a89dc; border-color: #4a89dc;color: white; height: 2.5rem; border-radius: 0.25em; padding: 0 1%; max-width:95%" class="sub btn btn-lg">Add a filter ⚡
         <br>
       </button>  
     <br>
@@ -85,7 +86,7 @@ See the various filters that can be added <a href="https://www.labnol.org/intern
               <div style="margin:3%; margin-top:1em; margin-bottom:0;" id="timeline" class="timeline">
               </div>
             </div>
-            <div id="main" style=" border:white 10px solid; margin-bottom:0; margin-top:0; box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); border-radius:0.25em;" class="col-9">
+            <div id="main" style=" border:white 10px solid; margin-bottom:0; margin-top:0; box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); border-radius:0.25em;" class="col-12">
               <div style="padding:1em;">
                 <select style="color:#3d3d3d" onchange="las()"  id="sel" class="form-select">
                   <option value="user">Account with username ...
@@ -97,7 +98,7 @@ See the various filters that can be added <a href="https://www.labnol.org/intern
                   <option value="any">Any Account
                   </option>
                 </select>
-                <input class="form-input" id="next" name="username" placeholder="Without the @" style="display:inline; height:2.2em;margin-top:1em;">
+                <input class="form-input" id="next" name="username" placeholder="@ElonMusk" style="display:inline; height:2.2em;margin-top:1em;">
                 <br>
                 <br>
                 <span style="color:white;"> which &nbsp;
@@ -170,12 +171,8 @@ See the various filters that can be added <a href="https://www.labnol.org/intern
     <strong>Links
     </strong>
     <ul>
-      <a href="/filters.html">
+      <a href="/filters">
         <li>Example filters for retweets
-        </li>
-      </a>
-      <a href="https://twitter.com/jajoosam/status/924938849922326528">
-        <li>Example tweet to add filter
         </li>
       </a>
       <a href="https://twitter.com/com__com___/likes">
@@ -199,7 +196,6 @@ See the various filters that can be added <a href="https://www.labnol.org/intern
         </li>
       </a>
     </ul>
-    </p>
   <script src="la.js">
   </script>
   <!-- Global site tag (gtag.js) - Google Analytics -->

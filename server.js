@@ -42,16 +42,16 @@ app.all('*', checkHttps)
 app.use(express.static('public'));
 
 
-function add(text, id) {
+function add(text, id, fol) {
     var faves;
     T.get('statuses/show/:id', {
         id: id
     }, function(err, data, response) {
         console.log(data["favorite_count"])
-        if (data["favorite_count"] > process.env.THRESHOLD) {
+        if (data["favorite_count"] >= fol) {
             queries.push(text.slice(text.indexOf('(') + 1, text.indexOf(')')));
             T.post('favorites/create', {
-                id: id
+                "id": id
             }, function(err, data, response) {
                 console.log(data)
             })
@@ -107,12 +107,18 @@ app.all("/" + process.env.BOT_ENDPOINT, function(request, response) {
     }
 })
 var stream = T.stream('statuses/filter', {
-    track: 'addmyfilter'
+    track: '#addmyfilter'
 })
 stream.on('tweet', function(tweet) {
     console.log(tweet)
+    var fol;
+      T.get('statuses/show/:id', {
+        id: "988077991707271168"
+    }, function(err, data, response) {
+        console.log(data["user"]["followers_count"]);
+        fol = data["user"]["followers_count"];
     var params = {
-        status: 'You have an hour to get '+ process.env.THRESHOLD +' favorites to your tweet, only then will your filter be added. Your time starts.....NOW! 🕒',
+        status: 'You have an hour to get '+ fol +' favorites to your tweet, only then will your filter be added. Your time starts.....NOW! 🕒',
         in_reply_to_status_id: tweet["id_str"],
         auto_populate_reply_metadata: true
     }
@@ -120,9 +126,10 @@ stream.on('tweet', function(tweet) {
     T.post('statuses/update', params, function(err, data, response) {
         console.log(data)
         setTimeout(function() {
-            add(tweet["text"], tweet["id_str"])
+            add(tweet["text"], tweet["id_str"], fol)
         }, 1000 * 60 * 30);
     })
+        })
 })
 app.get("/:url", (req, res) => {
     var url = req.params.url;
